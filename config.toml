@@ -1,0 +1,15 @@
+base_url = "https://cajum.github.io"
+title = "My devblog"
+description = "A developer blog for all and none"
+
+compile_sass = true
+highlight_code = true
+build_search_index = true
+theme = "lightspeed"
+insert_anchor_links = true
+
+[extra]
+author = "Mihai-Drosi Câju"
+footer_links = [
+    {url = "$BASE_URL/about/me", name = "About me"},
+]
