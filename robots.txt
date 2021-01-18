@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://cajum.github.io/sitemap.xml
