@@ -11,11 +11,11 @@
         };
       in
       {
-        devShell = (pkgs.buildFHSUserEnv {
+        devShell = pkgs.mkShell {
           name = "blog";
-          targetPkgs = ps: with ps; [
+          packages = with pkgs; [
 	    zola
           ];
-        }).env;
+        };
       }));
 }
