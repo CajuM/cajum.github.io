@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cum să minți o țară: Reportajul Recorder, &quot;Clanul Marelui Alb&quot; &middot; My devblog</title>
+    <meta name="description" content="A developer blog for all and none" />
+    <link rel="shortcut icon"  href="https://cajum.github.io/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://cajum.github.io/atom.xml">
+
+    <style>html,body{background:#fffaf7;color:#2d2d2d;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}a,a:visited{color:darkred;text-decoration:none}a:hover{text-decoration:underline}main{margin:auto;max-width:38rem;padding:.8rem}pre{background:#fff;overflow:scroll;padding:1rem}td{border:1px solid #2d2d2d;padding:10px}img{height:auto;max-width:100%}.homepage-list{list-style:none;padding:1rem 0}.homepage-list li{align-items:center;display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:10px}@media (max-width: 38rem){.homepage-list li a{width:100%}}</style>
+
+    <meta property="og:site_name" content="My devblog">
+      <meta name="author" content="Mihai-Drosi Câju" />
+      <meta property="og:title" content="Cum să minți o țară: Reportajul Recorder, &quot;Clanul Marelui Alb&quot;">
+      <meta property="og:description" content="">
+      <meta property="og:url" content="https://cajum.github.io/csro/">
+      <meta property="og:image" content="">
+
+      <meta property="og:type" content="article" />
+        <meta property="article:published_time" content="2024-07-13T00:00:00+00:00" />
+
+      
+      
+    
+
+  </head>
+  
+
+  <body>
+    <main id="main" role="main">
+
+      
+      <header role="banner">
+        <h3 style="margin-top:0;">
+          <a href="https://cajum.github.io" title="Home">My devblog</a>
+          <br /><small>A developer blog for all and none</small>
+        </h3>
+      </header>
+      <hr />
+      
+
+      
+<article>
+  <h1>Cum să minți o țară: Reportajul Recorder, &quot;Clanul Marelui Alb&quot;</h1>
+
+  
+    <p style="font-size:90%;">Posted on <time datetime="2024-07-13T00:00:00+00:00">July 13, 2024</time></p>
+  
+
+  <p>În reportajul din 2021, reporterii Recorder pretind demascarea activitaților de clan mafiot ale Bisericii Ortodoxe Române. Reportajul are ca scop analiza deturnării de fonduri ale Statului Român prin umflarea prețurilor aferente construcției sau renovării de lăcașuri de cult. Ca studiu de caz este abordată renovarea Mânăstirii Chiajna-Giulești. Ca dovadă a fraudei, este prezentat un document ce conține o parte din costurile renovării<sup class="footnote-reference"><a href="#fn1">1</a></sup>.</p>
+<p>Reporterul ne atrage atenția asupra prețului unitar al manoperei aferente capitolului RPIC70E1, susținând că este de zece ori mai mare decât prețul pieței(25.56<sup class="footnote-reference"><a href="#fn1">1</a></sup> vs 3.62<sup class="footnote-reference"><a href="#fn3">2</a></sup>). Ca dovadă, ne arată o captură de ecran a programului eDevize<sup class="footnote-reference"><a href="#fn2">3</a></sup>. Reporterul nu menționează direct numele programului, ci doar că este folosit de &quot;majoritatea constructorilor din România&quot;<sup class="footnote-reference"><a href="#fn6">4</a></sup>. Pentru a confirma că programul este întradevăr eDevize putem căuta o captura de ecran a programului<sup class="footnote-reference"><a href="#fn2">3</a></sup>. După cum putem observa, butoanele de la &quot;Cauta articol&quot; la &quot;Proprietati&quot; sunt identice, inclusiv lipsa diacriticelor. Din taburi lipsește &quot;Fraht&quot;, dar asta nu este o problemă deoarece pot apărea schimbări în interfață între versiuni. Diferențele de aspect ale interfeței se datorează faptului că reporterul folosește versiunea macOS a programului.</p>
+<p>Pentru a ne induce în eroare, reporterul ne prezintă o captură de ecran din programul eDevize care afișează &quot;prețul pieței&quot;<sup class="footnote-reference"><a href="#fn3">2</a></sup>. Dacă ne uităm cu atenție la captura de ecran a eDevize<sup class="footnote-reference"><a href="#fn2">3</a></sup>, observăm că ne este arătat prețul total în loc de cel unitar cu valoarea cantitații setată la o valoare convenabilă(0.17)<sup class="footnote-reference"><a href="#fn3">2</a></sup>. Pentru a ne verifica ipoteza este suficient un simplu calcul:</p>
+<pre><code>Preț total = cantiate * Preț unitar
+           = 0.17 * 21.27
+           = 3.616
+</code></pre>
+<p>Cu erori de rotunjire este aproximativ egal cu 3.62<sup class="footnote-reference"><a href="#fn3">2</a></sup>. În captura de ecran observăm că au fost micșorate coloanele astfel încat nu putem distinge între pretul unitar și cel total<sup class="footnote-reference"><a href="#fn3">2</a></sup>. Însă, dacă ne uităm la captura de mai devreme<sup class="footnote-reference"><a href="#fn2">3</a></sup>, observăm ca ordinea coloanelor este &quot;Pret unitar&quot; si apoi &quot;Pret total&quot;.</p>
+<p>În cazul capitolului CF48B02, reporterul ne spune doar că &quot;specialiștii pe care i-am consultat spun că ... nu putea fi mai mare de 15 lei pe metru pătrat&quot;, fară să aducă vreo dovadă<sup class="footnote-reference"><a href="#fn4">5</a></sup>. În același timp putem observa că unele câmpuri pentru prețul unitar au fost șterse: material, utilaj, transport<sup class="footnote-reference"><a href="#fn3">2</a></sup>. Deși valorile lor au fost folosite în calculul prețului total. Spre exemplu câmpul &quot;material&quot; are o valoare de:</p>
+<pre><code>material = (Preț unitar total - manoperă)
+         = 59.23 - 28.55
+         = 30.68
+</code></pre>
+<p>Pentru a ne verifica, putem calcula manopera în alt fel:</p>
+<pre><code>material = (Preț total - Preț total manoperă) &#x2F; Cantitate
+         = (18953.60 - 9136) &#x2F; 320
+         = 30.68
+</code></pre>
+<p>Ca ultimă dovadă, reporterul ne indică prețul umflat al capitolului CN04A1, menționând că a fost umflat de patru ori. Dar, și în acest exemplu, este folosit trucul de mai devreme. Ne este spus că prețul umflat unitar al manoperei este de 25.56<sup class="footnote-reference"><a href="#fn1">1</a></sup>, în timp ce ne este arătat, în loc, prețul total al manoperei de 6.64. Și în acest caz cantitatea are o valoare fictivă de 0.31 ore, în timp ce prețul unitar, raportat de eDevize, este de 21.42<sup class="footnote-reference"><a href="#fn5">6</a></sup>.</p>
+<p>Examinând documentul<sup class="footnote-reference"><a href="#fn1">1</a></sup>, observăm că ultimul capitol este gol, deși unele din câmpurile numerice au valori. Din moment ce restul capitolelor au o descriere ce este aliniată la vârful celulei, ne putem întreba dacă documentul prezentat a fost trucat?</p>
+<p><sup class="footnote-reference"><a href="#fn1">1</a></sup> <a href="https://youtu.be/qHTgt82ZGPM?feature=shared&amp;t=2308">Formular Devize</a></p>
+<p><sup class="footnote-reference"><a href="#fn2">3</a></sup> <a href="https://youtu.be/Kuzw6vJBQjQ?feature=shared&amp;t=2">eDevize</a></p>
+<p><sup class="footnote-reference"><a href="#fn3">2</a></sup> <a href="https://youtu.be/qHTgt82ZGPM?feature=shared&amp;t=2321">RPIC70E1 eDevize</a></p>
+<p><sup class="footnote-reference"><a href="#fn4">5</a></sup> <a href="https://youtu.be/qHTgt82ZGPM?feature=shared&amp;t=2338">CF48B02 Specialiști</a></p>
+<p><sup class="footnote-reference"><a href="#fn5">6</a></sup> <a href="https://youtu.be/qHTgt82ZGPM?feature=shared&amp;t=2365">CN04A1 eDevize</a></p>
+<p><sup class="footnote-reference"><a href="#fn6">4</a></sup> <a href="https://youtu.be/qHTgt82ZGPM?feature=shared&amp;t=2270">popularitate eDevize</a></p>
+
+</article>
+
+
+      
+      <footer role="contentinfo">
+        <hr />
+        
+        <nav style="margin-bottom:1rem;" role="navigation">
+          
+            <a href="https://cajum.github.io/about/me">About me</a>
+            
+          
+        </nav>
+        
+        
+        <small>Built with <a href="https://www.getzola.org/">Zola</a>.<br />
+          Maintained with &hearts; for the web.<br />
+          
+        </small>
+        
+      </footer>
+      
+
+    </main>
+    
+    
+  </body>
+</html>
+

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>My devblog</title>
+    <subtitle>A developer blog for all and none</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://cajum.github.io/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://cajum.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-07-13T00:00:00+00:00</updated>
+    <id>https://cajum.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Cum să minți o țară: Reportajul Recorder, &quot;Clanul Marelui Alb&quot;</title>
+        <published>2024-07-13T00:00:00+00:00</published>
+        <updated>2024-07-13T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cajum.github.io/csro/"/>
+        <id>https://cajum.github.io/csro/</id>
+        
+        <content type="html" xml:base="https://cajum.github.io/csro/">&lt;p&gt;În reportajul din 2021, reporterii Recorder pretind demascarea activitaților de clan mafiot ale Bisericii Ortodoxe Române. Reportajul are ca scop analiza deturnării de fonduri ale Statului Român prin umflarea prețurilor aferente construcției sau renovării de lăcașuri de cult. Ca studiu de caz este abordată renovarea Mânăstirii Chiajna-Giulești. Ca dovadă a fraudei, este prezentat un document ce conține o parte din costurile renovării&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Reporterul ne atrage atenția asupra prețului unitar al manoperei aferente capitolului RPIC70E1, susținând că este de zece ori mai mare decât prețul pieței(25.56&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; vs 3.62&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn3&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;). Ca dovadă, ne arată o captură de ecran a programului eDevize&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn2&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. Reporterul nu menționează direct numele programului, ci doar că este folosit de &amp;quot;majoritatea constructorilor din România&amp;quot;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn6&quot;&gt;4&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. Pentru a confirma că programul este întradevăr eDevize putem căuta o captura de ecran a programului&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn2&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. După cum putem observa, butoanele de la &amp;quot;Cauta articol&amp;quot; la &amp;quot;Proprietati&amp;quot; sunt identice, inclusiv lipsa diacriticelor. Din taburi lipsește &amp;quot;Fraht&amp;quot;, dar asta nu este o problemă deoarece pot apărea schimbări în interfață între versiuni. Diferențele de aspect ale interfeței se datorează faptului că reporterul folosește versiunea macOS a programului.&lt;&#x2F;p&gt;
+&lt;p&gt;Pentru a ne induce în eroare, reporterul ne prezintă o captură de ecran din programul eDevize care afișează &amp;quot;prețul pieței&amp;quot;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn3&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. Dacă ne uităm cu atenție la captura de ecran a eDevize&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn2&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;, observăm că ne este arătat prețul total în loc de cel unitar cu valoarea cantitații setată la o valoare convenabilă(0.17)&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn3&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. Pentru a ne verifica ipoteza este suficient un simplu calcul:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;Preț total = cantiate * Preț unitar
+           = 0.17 * 21.27
+           = 3.616
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Cu erori de rotunjire este aproximativ egal cu 3.62&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn3&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. În captura de ecran observăm că au fost micșorate coloanele astfel încat nu putem distinge între pretul unitar și cel total&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn3&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. Însă, dacă ne uităm la captura de mai devreme&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn2&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;, observăm ca ordinea coloanelor este &amp;quot;Pret unitar&amp;quot; si apoi &amp;quot;Pret total&amp;quot;.&lt;&#x2F;p&gt;
+&lt;p&gt;În cazul capitolului CF48B02, reporterul ne spune doar că &amp;quot;specialiștii pe care i-am consultat spun că ... nu putea fi mai mare de 15 lei pe metru pătrat&amp;quot;, fară să aducă vreo dovadă&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn4&quot;&gt;5&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. În același timp putem observa că unele câmpuri pentru prețul unitar au fost șterse: material, utilaj, transport&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn3&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. Deși valorile lor au fost folosite în calculul prețului total. Spre exemplu câmpul &amp;quot;material&amp;quot; are o valoare de:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;material = (Preț unitar total - manoperă)
+         = 59.23 - 28.55
+         = 30.68
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Pentru a ne verifica, putem calcula manopera în alt fel:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;material = (Preț total - Preț total manoperă) &amp;#x2F; Cantitate
+         = (18953.60 - 9136) &amp;#x2F; 320
+         = 30.68
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Ca ultimă dovadă, reporterul ne indică prețul umflat al capitolului CN04A1, menționând că a fost umflat de patru ori. Dar, și în acest exemplu, este folosit trucul de mai devreme. Ne este spus că prețul umflat unitar al manoperei este de 25.56&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;, în timp ce ne este arătat, în loc, prețul total al manoperei de 6.64. Și în acest caz cantitatea are o valoare fictivă de 0.31 ore, în timp ce prețul unitar, raportat de eDevize, este de 21.42&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn5&quot;&gt;6&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Examinând documentul&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;, observăm că ultimul capitol este gol, deși unele din câmpurile numerice au valori. Din moment ce restul capitolelor au o descriere ce este aliniată la vârful celulei, ne putem întreba dacă documentul prezentat a fost trucat?&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;qHTgt82ZGPM?feature=shared&amp;amp;t=2308&quot;&gt;Formular Devize&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn2&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;Kuzw6vJBQjQ?feature=shared&amp;amp;t=2&quot;&gt;eDevize&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn3&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;qHTgt82ZGPM?feature=shared&amp;amp;t=2321&quot;&gt;RPIC70E1 eDevize&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn4&quot;&gt;5&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;qHTgt82ZGPM?feature=shared&amp;amp;t=2338&quot;&gt;CF48B02 Specialiști&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn5&quot;&gt;6&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;qHTgt82ZGPM?feature=shared&amp;amp;t=2365&quot;&gt;CN04A1 eDevize&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#fn6&quot;&gt;4&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; &lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;qHTgt82ZGPM?feature=shared&amp;amp;t=2270&quot;&gt;popularitate eDevize&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>How science can explain everything without explaining much at all</title>
+        <published>2023-12-04T00:00:00+00:00</published>
+        <updated>2023-12-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cajum.github.io/expsci/"/>
+        <id>https://cajum.github.io/expsci/</id>
+        
+        <content type="html" xml:base="https://cajum.github.io/expsci/">&lt;p&gt;In the sense that science envelops the entirety of the observable universe under its theoretical framework, reduces all observations to its concepts and provides insight into all objects and phenomena unavailable to direct observation, we can see clearly that we are unjustified in believing as such as even the simple task of understanding a leaf proves titanic once we realize that it contains incomprehensibly many atoms by any human or machine.&lt;&#x2F;p&gt;
+&lt;p&gt;Given that science can not explain things like psychology starting from quantum mechanics, possibly due to our lack of memory, it does however explain abstractions of phenomenon or very simple phenomenon. For example we may not be able to explain falling in love from neurology, but we can correlate it with the secretion of oxytocin. Or we may not be able to predict every position through time of all the atoms of a falling ball, but we can give a rough estimate of its trajectory using Newtonian Mechanics. An example of a simple phenomenon would be electron-electron collision, there is not much else to say about it besides the interaction of two elemental particles.&lt;&#x2F;p&gt;
+&lt;p&gt;Some have thought it proper to extend the realm of scientific knowledge over the entire universe. But let us consider a particular class of phenomenon, those which include a large number of unknowns, the falling of a rock off a cliff, the growth of a tree, or even talking to a friend. Let us ask ourselves what if the rock ended up on the left of the cliff instead of on the right? What if the tree had 7 instead of 8 branches? What the dialogue went in a different direction than what it had? Although this would not surprise us, highly rigid laws of motion would most certainly have been broken had any of the previously mentioned occurred. As such our lack of surprise of an event is by no means proof that our explanations held in place, because we had not explained anything to begin with.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;eu-nu-strivesc-corola-de-minuni-a-lumii-lucian-blaga&quot;&gt;Eu nu strivesc corola de minuni a lumii  -  Lucian Blaga&lt;&#x2F;h3&gt;
+&lt;pre&gt;&lt;code&gt;Eu nu strivesc corola de minuni a lumii
+şi nu ucid
+cu mintea tainele, ce le-ntâlnesc
+în calea mea
+în flori, în ochi, pe buze ori morminte.
+Lumina altora
+sugrumă vraja nepătrunsului ascuns
+în adâncimi de întuneric,
+dar eu,
+eu cu lumina mea sporesc a lumii taină -
+şi-ntocmai cum cu razele ei albe luna
+nu micşorează, ci tremurătoare
+măreşte şi mai tare taina nopţii,
+aşa îmbogăţesc şi eu întunecata zare
+cu largi fiori de sfânt mister
+şi tot ce-i neînţeles
+se schimbă-n neînţelesuri şi mai mari
+sub ochii mei-
+căci eu iubesc
+şi flori şi ochi şi buze şi morminte.
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>On the propagation of human actions through time and space</title>
+        <published>2023-11-17T00:00:00+00:00</published>
+        <updated>2023-11-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cajum.github.io/eth/"/>
+        <id>https://cajum.github.io/eth/</id>
+        
+        <content type="html" xml:base="https://cajum.github.io/eth/">&lt;p&gt;Actions exist that are amplified as time goes on and their consequences spread through space. Example: Anything that shuffles up male gametes before conception such as bumping into a person while on public transportation. Such actions have consequences that are highly sensitive to initial states and produce relevant effects relatively quickly. Another example might be the election of officials, two people falling in love, meeting people and forming friendships, finding a PhD advisor, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;Such actions, although start from one individual they propagate, initially, to more individuals in similar states. By induction they may propagate for ever in relevant ways. We may imagine what would have happened had one of Hitler&#x27;s ancestors from 1500 years ago died in battle before having children. Hitler may have even been a woman, history would have been completely altered as Hitler was not the only descendant of that person, The Holocaust may never have happened, or something worse may have, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;We can model a universe in which such actions take place by a directed acyclic graph. The graph is grouped into layers, similar to a neural network, except that each node is connected to a finite number of child states and a child state has a finite number of ancestors. The bottom layers represent the initial states, the top layers represent the final states, each node is either white or black. A node, except the initial ones, have their color determined as the XOR of all its ancestors. To model what effect such an action has on the universe, flip the color of just one initial node. We can concretely map such a model to reality by assuming that the graph is a genealogy and the colors represent the sex of the person.&lt;&#x2F;p&gt;
+&lt;p&gt;Furthermore we can imagine human decision as a progressive subset selection. For example person 0 chooses the first element of a binary sequence as 1, person two chooses 1, 2 0, etc. In this example, although person 0 does not choose the final, nor the greatest number of bits in the sequence he selects half of the possible sequences at that time, the same for person 1, 2, etc. In reality we would expect that the universes we select are different to us in relevant ways, instead of a ones(|a - b|), such as (Bill: politician, John: farmer, Ellis: nurse, etc.) vs (Joe: cleric, John: deceased, Jane: sailor, etc).&lt;&#x2F;p&gt;
+&lt;p&gt;Thus our actions as minor as they may be can have significant results especially as they get further away from us in time and space. From an ethical perspective it is unlikely that after a given distance we would have any preference towards a given universe we produced versus an alternative one. Therefore they are for the most part ethically irrelevant after a given time and space.&lt;&#x2F;p&gt;
+&lt;p&gt;In the scenario where the consequences of our actions are left in the tides of fate, good need not follow good, evil may only be apparent. As we would mindlessly change the world around us, we may only take credit for what is within the reach of our prediction and control. Two issues arise here. The first, would we be comfortable in these boundaries? A mother wishes the best for her child as long as he lives, but one day she sends him shopping and a car hits him. The second, should we place more importance on what we can successfully accomplish? I might have saved Rome for the time being, but weakened it to the barbarians through civil war. Every good and evil would only be an illusion given by our ignorance of the world.&lt;&#x2F;p&gt;
+&lt;p&gt;Let us consider another scenario, good follows good eventually, evil is only temporary. As in Immanuel Kant&#x27;s argument from morality we propose a world in which time and space are shepherded by God himself. Nothing grand would come out of our good will, such as empires lasting until the end of the world, neither saving countries from ignorance and deceit as enlightenment attempted. However our intuition would be much more comfortable as we need not concern ourselves that our works be in vain, humble as they may be.&lt;&#x2F;p&gt;
+&lt;p&gt;As a final remark, assuming that the world is beyond our control and prediction and it is still very good, without us even concerning ourselves for it nor being able to do so, we may consider the first scenario falsified in the favor of the later.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;Robert Browning
+Pippa’s Song
+
+The year’s at the spring,
+And day’s at the morn;
+Morning’s at seven;
+The hill-side ’s dew-pearl&amp;#x27;d;
+The lark’s on the wing;
+The snail’s on the thorn;
+God’s in His heaven—
+All’s right with the world!
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>About me</title>
+        <published>2023-11-16T00:00:00+00:00</published>
+        <updated>2023-11-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cajum.github.io/about/me/"/>
+        <id>https://cajum.github.io/about/me/</id>
+        
+        <content type="html" xml:base="https://cajum.github.io/about/me/">&lt;p&gt;Hi, my name is Mihai-Drosi Câju, I&#x27;m currently a PhD student at Politehnica University of Bucharest, Faculty of Automatic Control and Computers. My doctoral advisor is &lt;a href=&quot;http:&#x2F;&#x2F;nets.cs.pub.ro&#x2F;~costin&#x2F;&quot;&gt;Costin Raiciu&lt;&#x2F;a&gt;. My research is focused on networking with applications in datacenters and operating systems. Although, I often tend to derail towards almost any other subject that crosses my mind, from information security to mathematics and philosophy.&lt;&#x2F;p&gt;
+&lt;p&gt;You can find me on GitHub at &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;CajuM&quot;&gt;CajuM&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Some thoughts on the intelligent design of the human race</title>
+        <published>2023-11-15T00:00:00+00:00</published>
+        <updated>2023-11-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cajum.github.io/inth/"/>
+        <id>https://cajum.github.io/inth/</id>
+        
+        <content type="html" xml:base="https://cajum.github.io/inth/">&lt;p&gt;Starting from Australopitecus and assuming the given entropy in the generation and propagation of mutations we may conclude that humanity as we know it need not have been the only possible outcome. Perhaps a more intelligent species might have arisen or extinction and stagnation taken their toll. In short a random generation of mutations could have produced a vastly different speciation of the genus Homo.&lt;&#x2F;p&gt;
+&lt;p&gt;We may treat the random mutations as a highly complex and unpredictable variable in a deterministic physical system that, as its final state, produces today&#x27;s civilisation. However if we assume that the birth of civilisation on Earth as we know it was deterministic the signal was anything but random. Incomprehensible as it was in its working, it was causally equivalent to the only world we know.&lt;&#x2F;p&gt;
+&lt;p&gt;However if we assume that civilization was a less probable outcome, we are left puzzled that, although less likely, it turned-out highly favorable.&lt;&#x2F;p&gt;
+&lt;p&gt;Thus, we have a scale of probability between 0 and 1, the closer we get to 1 the more we encode civilisation in the &amp;quot;randomness&amp;quot;, the more we move to 0 the more we tend to incline to the paradox that a highly favorable event took place that was unlikely.&lt;&#x2F;p&gt;
+&lt;p&gt;One might argue that civilisation is a vague term, and thus envelopes a wide array of other possibilities all of them favorable or even more so. The above argument may seem to be weakened in this case as the event we imagine was not the only one that would have matched the predicate. As such, a civilisation would have been more likely although this civilisation may have been near impossible. This may seem to bypass the argument in that a civilisation is both likely and does not encode a certain outcome. However we may judge how likely the evolution of a civilisation may have been by looking at the phylogenetic tree starting from Australopitecus. Outside the species Homo Sapiens, all other species were extinct before history had even started. Even some groups of Homo Sapiens faced annihilation after failed colonisation attempts, or as is the case of the Maya empire, failed to develop civilisation beyond the Bronze Age. We may conclude from here that even the development of a civilisation was an unlikely event.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Decompiling FlatBuffers case study: Facebook&#x27;s GraphQL schema</title>
+        <published>2020-12-30T00:00:00+00:00</published>
+        <updated>2020-12-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://cajum.github.io/fbgraphql/"/>
+        <id>https://cajum.github.io/fbgraphql/</id>
+        
+        <content type="html" xml:base="https://cajum.github.io/fbgraphql/">&lt;h1 id=&quot;background&quot;&gt;Background&lt;&#x2F;h1&gt;
+&lt;p&gt;Back in 2017, while looking for an open-source client for Facebook&#x27;s Messenger,
+I stumbled upon &lt;a href=&quot;https:&#x2F;&#x2F;fbchat.readthedocs.io&#x2F;en&#x2F;stable&#x2F;&quot;&gt;fbchat&lt;&#x2F;a&gt;.
+A project that implements an open-source interface for Facebook&#x27;s Messenger.
+Knowing full-well that Facebook did not officially expose that interface for user-to-user communication, I became intrigued.
+From what I knew from &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;dequis&#x2F;purple-facebook&quot;&gt;libpurple&#x27;s&lt;&#x2F;a&gt; it would have had to use MQTT, but it was not the case.
+This implementation used a REST based API, digging through the source-code I found out it used a version of the GraphQL API.&lt;&#x2F;p&gt;
+&lt;p&gt;After digging a bit on the internet I realised that there existed no public documentation of this particular API.
+Except perhaps, the occasional blog-post about a few fields or methods. And of course, what the fbchat project
+managed to dig-up.&lt;&#x2F;p&gt;
+&lt;p&gt;Source code for the provided files and a decoded schema can be found at: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;CajuM&#x2F;fb-graphql-schema&quot;&gt;fb-graphql-schema&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;the-first-step-is-the-hardest&quot;&gt;The first step is the hardest&lt;&#x2F;h1&gt;
+&lt;p&gt;But API interfaces must be known publicly, at least by the clients of those APIs.
+And here begins our journey. And its first task, find a client for Facebook&#x27;s GraphQL API.
+An easy task you say? Given that we all know about the Facebook for Android and Messenger apps, even Facebook Lite, it should be easy.
+Unfortunately not, we do not know in what format the schema is stored, it could be compressed, obfuscated, it might exist only as byte code.&lt;&#x2F;p&gt;
+&lt;p&gt;And we have one more problem, how do we find it?
+This problem we can answer, at least by a simple heuristic, the schema must contain the type and field names.
+Fortunately for us some of them have already been provided by the fbchat project.
+We end up with a string search through Facebook&#x27;s apps.
+Sample GraphQL queries can be found at &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;fbchat-dev&#x2F;fbchat&#x2F;blob&#x2F;master&#x2F;fbchat&#x2F;_graphql.py&quot;&gt;_graphql.py&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m more familiar with Android so that was my platform of choice.
+My first try was Facebook Lite, but I had no success.
+Next up, Facebook for Android(aka com.facebook.katana).
+The version we are going to discuss is v230.0.0.36.117 , given that I revisited the schema in 2019.&lt;&#x2F;p&gt;
+&lt;p&gt;In this case &lt;code&gt;apktool d -r&lt;&#x2F;code&gt; gave me a decent start. The &lt;code&gt;-r&lt;&#x2F;code&gt; flag is needed due to a bug in apktool.
+It disables the extraction of resources, but it won&#x27;t affect the discussion.&lt;&#x2F;p&gt;
+&lt;p&gt;Now, we can start looking for strings.
+We&#x27;ll need a sufficiently uncommon string so that it doesn&#x27;t match too many files, long ones are generally the best.
+So let&#x27;s try &lt;code&gt;grep -R lightweight_event_creator&lt;&#x2F;code&gt;. And more sure than not, we get:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;grep: assets&amp;#x2F;graph_metadata.bin: binary file matches
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Given the suggestively named file, we have found our schema!&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;magic-numbers&quot;&gt;Magic numbers&lt;&#x2F;h1&gt;
+&lt;p&gt;I was expecting a few months of dex reverse engineering, but the task seems to be a different one.
+We now have to deduce the file-type. Let&#x27;s try:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ file assets&amp;#x2F;graph_metadata.bin
+assets&amp;#x2F;graph_metadata.bin: data
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;So it&#x27;s a custom encoding, it might be ASN.1, a proprietary serialization, or anything else.
+This file must be read somewhere, so we might find a reference to it and hopefully to its format:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ grep -R graph_metadata.bin
+original&amp;#x2F;META-INF&amp;#x2F;MANIFEST.MF:Name: assets&amp;#x2F;graph_metadata.bin
+original&amp;#x2F;META-INF&amp;#x2F;FACEBOOK.SF:Name: assets&amp;#x2F;graph_metadata.bin
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Nothing useful... the code could be obfuscated or downloaded from the internet.
+An Android installation might provide us with more information.
+Let&#x27;s find out where it&#x27;s used:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ adb root
+$ adb shell
+
+generic_arm64:&amp;#x2F; # setenforce 0
+generic_arm64:&amp;#x2F; # stop
+generic_arm64:&amp;#x2F; # start
+generic_arm64:&amp;#x2F; # strace -ff -i -s 500 -o &amp;#x2F;data&amp;#x2F;local&amp;#x2F;tmp&amp;#x2F;strace.zygote -p $(pidof zygote)
+generic_arm64:&amp;#x2F; # grep -R graph_metadata.bin &amp;#x2F;data&amp;#x2F;local&amp;#x2F;tmp&amp;#x2F;strace.zygote.*
+strace.zygote.6690:[e893a7ac] pread64(31, &amp;quot;assets&amp;#x2F;graph_metadata.bin&amp;quot;, 25, 5584953) = 25
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And in this case we got nothing, or maybe. But it&#x27;s not an open, nor an openat.
+We have an offset let&#x27;s check that with the apk:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ grep -abo assets&amp;#x2F;graph_metadata.bin katana.apk
+5584953:assets&amp;#x2F;graph_metadata.bin
+41145638:assets&amp;#x2F;graph_metadata.bin
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;So, it&#x27;s there, we now have a hint to tell gdb what condition to break on:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ adb forward tcp:4444 tcp:4444
+$ adb shell
+generic_arm64:&amp;#x2F; # am set-debug-app com.facebook.katana
+generic_arm64:&amp;#x2F; # setprop wrap.com.facebook.katana &amp;#x27;gdbserver localhost:4444&amp;#x27;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now we&#x27;ll open Facebook for Android and launch gdb:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ gdb
+target remote :4444
+break pread64
+condition 1 $r4 == 5584953
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And...&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;#0  0xf5b567a4 in pread64 () from target:&amp;#x2F;system&amp;#x2F;lib&amp;#x2F;libc.so                                                                              [36&amp;#x2F;1861]
+#1  0xf6a768d8 in ?? () from target:&amp;#x2F;system&amp;#x2F;lib&amp;#x2F;libandroidfw.so
+#2  0xf6a73190 in android::ZipFileRO::findEntryByName(char const*) const () from target:&amp;#x2F;system&amp;#x2F;lib&amp;#x2F;libandroidfw.so
+#3  0xf6a65664 in android::AssetManager::openNonAssetInPathLocked(char const*, android::Asset::AccessMode, android::AssetManager::asset_path const&amp;amp;
+) () from target:&amp;#x2F;system&amp;#x2F;lib&amp;#x2F;libandroidfw.so
+#4  0xf6a65bd6 in android::AssetManager::open(char const*, android::Asset::AccessMode) () from target:&amp;#x2F;system&amp;#x2F;lib&amp;#x2F;libandroidfw.so
+#5  0xf753c79e in AAssetManager_open () from target:&amp;#x2F;system&amp;#x2F;lib&amp;#x2F;libandroid.so
+#6  0xda7f928a in ?? () from target:&amp;#x2F;data&amp;#x2F;data&amp;#x2F;com.facebook.katana&amp;#x2F;lib-xzs&amp;#x2F;libcoldstart.so
+#7  0xda7f91ec in ?? () from target:&amp;#x2F;data&amp;#x2F;data&amp;#x2F;com.facebook.katana&amp;#x2F;lib-xzs&amp;#x2F;libcoldstart.so
+#8  0xda7f9160 in ?? () from target:&amp;#x2F;data&amp;#x2F;data&amp;#x2F;com.facebook.katana&amp;#x2F;lib-xzs&amp;#x2F;libcoldstart.so
+#9  0xda815bf0 in ?? () from target:&amp;#x2F;data&amp;#x2F;data&amp;#x2F;com.facebook.katana&amp;#x2F;lib-xzs&amp;#x2F;libcoldstart.so
+#10 0xda6efece in ?? () from target:&amp;#x2F;data&amp;#x2F;data&amp;#x2F;com.facebook.katana&amp;#x2F;lib-xzs&amp;#x2F;libcoldstart.so
+#11 0xda6f2186 in ?? () from target:&amp;#x2F;data&amp;#x2F;data&amp;#x2F;com.facebook.katana&amp;#x2F;lib-xzs&amp;#x2F;libcoldstart.so
+#12 0xda6f2012 in ?? () from target:&amp;#x2F;data&amp;#x2F;data&amp;#x2F;com.facebook.katana&amp;#x2F;lib-xzs&amp;#x2F;libcoldstart.so
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Looks like it&#x27;s somewhere in libcoldstart.so. Let&#x27;s see if we can find its format.
+Maybe we can get some information by looking at the libraries it links to?&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ adb pull &amp;#x2F;data&amp;#x2F;data&amp;#x2F;com.facebook.katana&amp;#x2F;lib-xzs&amp;#x2F;libcoldstart.so
+$ readelf -a libcoldstart.so | grep &amp;#x27;Shared library:&amp;#x27;
+ 0x00000001 (NEEDED)                     Shared library: [libz.so]
+ 0x00000001 (NEEDED)                     Shared library: [libdl.so]
+ 0x00000001 (NEEDED)                     Shared library: [liblowlevel.so]
+ 0x00000001 (NEEDED)                     Shared library: [libxplat_yoga_util_utilAndroid.so]
+ 0x00000001 (NEEDED)                     Shared library: [liblog.so]
+ 0x00000001 (NEEDED)                     Shared library: [libandroid.so]
+ 0x00000001 (NEEDED)                     Shared library: [libxplat_third-party_jsoncpp_jsoncppAndroid.so]
+ 0x00000001 (NEEDED)                     Shared library: [libglog.so]
+ 0x00000001 (NEEDED)                     Shared library: [libfmt.so]
+ 0x00000001 (NEEDED)                     Shared library: [libflatbuffersflatc.so]
+ 0x00000001 (NEEDED)                     Shared library: [libsigmux.so]
+ 0x00000001 (NEEDED)                     Shared library: [libfbsystrace.so]
+ 0x00000001 (NEEDED)                     Shared library: [libmemalign16.so]
+ 0x00000001 (NEEDED)                     Shared library: [libbreakpad.so]
+ 0x00000001 (NEEDED)                     Shared library: [libprofiloextapi.so]
+ 0x00000001 (NEEDED)                     Shared library: [liblinkerutilsmerged.so]
+ 0x00000001 (NEEDED)                     Shared library: [libdistractmerged.so]
+ 0x00000001 (NEEDED)                     Shared library: [libgnustl_shared.so]
+ 0x00000001 (NEEDED)                     Shared library: [libm.so]
+ 0x00000001 (NEEDED)                     Shared library: [libc.so]
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now we have a reference to FlatBuffers: &amp;quot;libflatbuffersflatc.so&amp;quot;, could this be the format?
+Let&#x27;s check. An easy way to see if a file is formated using FlatBuffers is to check that the
+first 4 bytes interpreted as an int32_t point to a table, the first int32_t in a table is the
+negative offset to its virtual table. Let&#x27;s see:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ hexdump -C graph_metadata.bin | head
+00000000  20 00 00 00 00 00 00 00  00 00 16 00 28 00 04 00  | ...........(...|
+00000010  08 00 0c 00 10 00 14 00  18 00 1c 00 20 00 24 00  |............ .$.|
+00000020  16 00 00 00 e0 10 2f 00  10 27 25 00 04 3a 1f 00  |......&amp;#x2F;..&amp;#x27;%..:..|
+00000030  20 fd 1d 00 ac 96 13 00  94 96 13 00 68 12 13 00  | ...........h...|
+00000040  b4 0e 0b 00 04 00 00 00  64 52 00 00 a0 0e 0b 00  |........dR......|
+00000050  90 0e 0b 00 84 0e 0b 00  78 0e 0b 00 68 0e 0b 00  |........x...h...|
+00000060  4c 0e 0b 00 28 0e 0b 00  08 0e 0b 00 e4 0d 0b 00  |L...(...........|
+00000070  c8 0d 0b 00 ac 0d 0b 00  94 0d 0b 00 84 0d 0b 00  |................|
+00000080  68 0d 0b 00 58 0d 0b 00  40 0d 0b 00 24 0d 0b 00  |h...X...@...$...|
+00000090  08 0d 0b 00 f0 0c 0b 00  d8 0c 0b 00 c0 0c 0b 00  |................|
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Integers in FlatBuffers are little-endian. We get:
+The first offset is 0x20 , it points to a 0x16 which points to the (0x16, 0x28).
+Assuming that 0x16 is the length of the virtual table, the data immediately after it is
+our root table. It would seem that it passes this heuristic.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;decoding&quot;&gt;Decoding&lt;&#x2F;h1&gt;
+&lt;p&gt;To automatize the decoding process, I have written a python module:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;$ echo &amp;#x27;H4sIAAAAAAACA51UTY+bQAy98yt8qQY26TZK94TC3rZSLz31UCmKEAmmGZUM0TCgbVf57&amp;#x2F;UwDgwhiVbLJQQ&amp;#x2F;P9vPH&amp;#x2F;JwrLSB2uhmZ4IgyLGAHHdVjmlr0syEeWayOVRFUaOJ4gDoIUOJChL4jSat9+Q&amp;#x2F;RnUgsy3vomAGyyjooLKAkDlXsIig0hCe3e0HF9U+OpM1wsvrDo9GVioU31WblTKHVmrTZCWYbFuimPJ+omAfpSEKpVEZKkUqc2b8YtPnKD1iBV8&amp;#x2F;GoXctcSagrhePDbqmO3+hGIlSCqxF&amp;#x2F;DQx5mDVXLthIwHQV1qm2i9jDeOVaNptIK3PinhMCJm8HywsORk4jfPxtmRjd8606kfGI1F6tIYNXlOCbSoa0y+ZWWN3AKy8VhYPcejc5aU&amp;#x2F;Tw1XSVc62f70tmceOVt6KyDukRtzE51Gu4bk81eyb2ifuoGI1&amp;#x2F;fKxvTU0Ve7Em9sc9y2XgpbjX6iXq82HjEV7bwLvX+JvXykrrFnal0iuWFCFim5u8R56DO4jngsPTT7nqwbUbLkXgl9a1X8Jx4ZO9YKCahu+HcvANgUww51QhkbVd4YCRDLf&amp;#x2F;ZPBgSXBmnAWQR9Zr&amp;#x2F;jzfMr2pGJTyc3SaTV0gs8wstewkNS3d9SF1yqduf1qz7tdys1aYvmQEJLCYr8aNSOEq7l79z4lz3+JrmzeEYbptiGCMKKYRzLkhpJCWBAKMYMCMQvMWL5a+TeCTYgfYBo1FI+qE4nZRE6S6ToK7QbfHOlNso+saD5N0iqyoZntwJcgbRLcAdis4+JVnyHTsF&amp;#x2F;wFyfW7uCQcAAA==&amp;#x27; | base64 -d | gunzip &amp;gt;fbs.py
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Running:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import fbs
+&amp;gt;&amp;gt;&amp;gt; data = open(&amp;#x27;graph_schema.bin&amp;#x27;, &amp;#x27;rb&amp;#x27;).read()
+&amp;gt;&amp;gt;&amp;gt; root = root = fbs.deref_offset(data, 00)
+&amp;gt;&amp;gt;&amp;gt; fbs.get_table_vt(data, root)
+{&amp;#x27;vt_len&amp;#x27;: 22, &amp;#x27;tbl_len&amp;#x27;: 40, &amp;#x27;entries&amp;#x27;: (4, 8, 12, 16, 20, 24, 28, 32, 36)}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;From here it&#x27;s a lot of guess work, and trial and error.
+So far I&#x27;ve got the following schema, it&#x27;s incomplete, but it provides us with enough
+information to reconstruct all types and fields of the GraphQL API:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;#x27;H4sIAAAAAAACA5WWzW6jMBDH7zzFPEClNtgGkhxy41pptbcoipxiGlQKFTjbRdW++9oeoG4C2LngyPnNf8bMh5H8VApIV&amp;#x2F;AVgFqO+WqzV0u6OmwB4PERZJ3VG&amp;#x2F;g8cwl53eyCf0HQyubyIsFggx2atue6kdtJu5EKlyilLjGiEJVDLXspKs0DzCmHWnavMRO2I26C0sSOeFaa2BEvUcSLol4U86IiB2UdmeKR6e2RiyoTf9UT0vUD5IUoM6j4u+jpcJZmPUFmichOJ8MAmAlANkX1Oiaq+xCjS3br8qMp3nnTwZvodj1CNnvDDDX67ZP2Z2h7kl6R8&amp;#x2F;UWY4DxRIC3Lz&amp;#x2F;2KorYRKqWlMz5R4p6aTHUYstakZdW7EUlkz2Fe1C0wMtP3rWwDwk9PEAhzV6lEvGHl0UGdZ63QqqdDLSJZZH0Dtbu1tYJebIwRfUi&amp;#x2F;NSKStopPA6trX9dlfqSB2xyzNQxDX1mSI9a7nBU2R4X3OHEcsA&amp;#x2F;3bHRF3OPWqQ8R22CyonXqE207KWs+&amp;#x2F;6Yp4gXRSc9qkqRZ&amp;#x2F;VoBC874KZ8Bgt2t0V0t0V8t4VqFbWkyUJzJnP1vqTrrP2hQrTzIY+YSiv3V3FgEif&amp;#x2F;H6vi1&amp;#x2F;Pzb6OHXwQHRxeZ&amp;#x2F;gmdlJ6HxEmpqZ1SJ6XnIXNSkX0DIHXirTDXTruzrz9Nx3oKODVNsp3UWnk2F8lh6YZu6loezR2o3&amp;#x2F;g2+A9&amp;#x2F;wCAZkQkAAA==&amp;#x27; | base64 -d | gunzip &amp;gt;graph_metadata.fbs
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h1 id=&quot;the-final-step&quot;&gt;The final step&lt;&#x2F;h1&gt;
+&lt;p&gt;The schema as you&#x27;ve probably noticed has an extra layer of encoding, probably to reduce its size.
+We don&#x27;t know what the types nor fields mean. The most helpful indicator is that if the type of a field
+is a short we can check if it&#x27;s an index in a vector by checking that all values are less than the vector&#x27;s
+length and the maximum index is close to the length of the vector.&lt;&#x2F;p&gt;
+&lt;p&gt;We&#x27;ll skip over the manual decoding. I&#x27;ll just show you the script I wrote to extract the types from the schema:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;#x27;H4sIAAAAAAACA5VUwW7CMAy95ysy7ZAiVWUUmLRJXHfcD1RR1NEUytqkSgJShfbvc+KWFhiH9RTe87Of7YTnp&amp;#x2F;nRmvlXpeZSnWjbub1WS0KqptXG0YPVajjbzhJCClnSrVYnaZwoK1kX0aGI6S4cZ++EwqfyRtINPRQZK98Yz5DM2MdKlAvGOQlRZQoxUyplHInlDbFkvaQqPVkpmr3EdMGxmv92rmsvJddQskw5aNehXoiS9ShexXQd09dH+jfU35ZcgOoPCcvOP5wlpTZN7qKAzlBqpDsaRc8XCfODYe9hPvGIegmgQYrwz82cPYNjDumvphygsdfBdABS5p2HiNF4a6omN534lt3Q8covacyT+h39HX6&amp;#x2F;+Qnf9y1r+7Dcp1ayX7&amp;#x2F;PYAHK+q1rg9jFMpqB5Y&amp;#x2F;JMGDiOgD8jr+3iffzOtAmedtKVUQ9+a+tTfoCcvJrEoNVgMbD9XKbvFJQWfXrhBMY1+DHgzFlxjH0ewgdw0NMap0XQYJW7XYvm&amp;#x2F;x6hHgtIdfwFO5v7INbdYnDtMNspjc6mCiOTRthTOz&amp;#x2F;ExLrCn10s2GtKtnW2soIAAIXUQg&amp;#x2F;OCHoBt6KEL5rIRi6CiPwKXKzO2ULPiO&amp;#x2F;Stbkt48EAAA=&amp;#x27; | base64 -d | gunzip &amp;gt;schema.py
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre&gt;&lt;code&gt;flatc --json --strict-json --raw-binary graph_metadata.fbs -- graphql_schema.bin
+.&amp;#x2F;schema.py graphql_schema.json &amp;gt;graphql_types.json
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And, we&#x27;re done.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;disclosure&quot;&gt;Disclosure&lt;&#x2F;h1&gt;
+&lt;p&gt;I have presented my findings to Facebook, their response was that the schema is not confidential.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
