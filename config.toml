@@ -3,11 +3,11 @@ title = "My devblog"
 description = "A developer blog for all and none"
 
 compile_sass = true
-highlight_code = true
 build_search_index = true
 theme = "lightspeed"
-insert_anchor_links = true
-generate_feed = true
+
+[markdown]
+highlight_code = true
 
 [extra]
 author = "Mihai-Drosi Câju"
