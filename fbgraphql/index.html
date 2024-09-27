@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Decompiling FlatBuffers case study: Facebook&#x27;s GraphQL schema &middot; My devblog</title>
+    <meta name="description" content="A developer blog for all and none" />
+    <link rel="shortcut icon"  href="https://cajum.github.io/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://cajum.github.io/atom.xml">
+
+    <style>html,body{background:#fffaf7;color:#2d2d2d;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}a,a:visited{color:darkred;text-decoration:none}a:hover{text-decoration:underline}main{margin:auto;max-width:38rem;padding:.8rem}pre{background:#fff;overflow:scroll;padding:1rem}td{border:1px solid #2d2d2d;padding:10px}img{height:auto;max-width:100%}.homepage-list{list-style:none;padding:1rem 0}.homepage-list li{align-items:center;display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:10px}@media (max-width: 38rem){.homepage-list li a{width:100%}}</style>
+
+    <meta property="og:site_name" content="My devblog">
+      <meta name="author" content="Mihai-Drosi Câju" />
+      <meta property="og:title" content="Decompiling FlatBuffers case study: Facebook&#x27;s GraphQL schema">
+      <meta property="og:description" content="">
+      <meta property="og:url" content="https://cajum.github.io/fbgraphql/">
+      <meta property="og:image" content="">
+
+      <meta property="og:type" content="article" />
+        <meta property="article:published_time" content="2020-12-30T00:00:00+00:00" />
+
+      
+      
+    
+
+  </head>
+  
+
+  <body>
+    <main id="main" role="main">
+
+      
+      <header role="banner">
+        <h3 style="margin-top:0;">
+          <a href="https://cajum.github.io" title="Home">My devblog</a>
+          <br /><small>A developer blog for all and none</small>
+        </h3>
+      </header>
+      <hr />
+      
+
+      
+<article>
+  <h1>Decompiling FlatBuffers case study: Facebook&#x27;s GraphQL schema</h1>
+
+  
+    <p style="font-size:90%;">Posted on <time datetime="2020-12-30T00:00:00+00:00">December 30, 2020</time></p>
+  
+
+  <h1 id="background"><a class="zola-anchor" href="#background" aria-label="Anchor link for: background">🔗</a>Background</h1>
+<p>Back in 2017, while looking for an open-source client for Facebook's Messenger,
+I stumbled upon <a href="https://fbchat.readthedocs.io/en/stable/">fbchat</a>.
+A project that implements an open-source interface for Facebook's Messenger.
+Knowing full-well that Facebook did not officially expose that interface for user-to-user communication, I became intrigued.
+From what I knew from <a href="https://github.com/dequis/purple-facebook">libpurple's</a> it would have had to use MQTT, but it was not the case.
+This implementation used a REST based API, digging through the source-code I found out it used a version of the GraphQL API.</p>
+<p>After digging a bit on the internet I realised that there existed no public documentation of this particular API.
+Except perhaps, the occasional blog-post about a few fields or methods. And of course, what the fbchat project
+managed to dig-up.</p>
+<p>Source code for the provided files and a decoded schema can be found at: <a href="https://github.com/CajuM/fb-graphql-schema">fb-graphql-schema</a></p>
+<h1 id="the-first-step-is-the-hardest"><a class="zola-anchor" href="#the-first-step-is-the-hardest" aria-label="Anchor link for: the-first-step-is-the-hardest">🔗</a>The first step is the hardest</h1>
+<p>But API interfaces must be known publicly, at least by the clients of those APIs.
+And here begins our journey. And its first task, find a client for Facebook's GraphQL API.
+An easy task you say? Given that we all know about the Facebook for Android and Messenger apps, even Facebook Lite, it should be easy.
+Unfortunately not, we do not know in what format the schema is stored, it could be compressed, obfuscated, it might exist only as byte code.</p>
+<p>And we have one more problem, how do we find it?
+This problem we can answer, at least by a simple heuristic, the schema must contain the type and field names.
+Fortunately for us some of them have already been provided by the fbchat project.
+We end up with a string search through Facebook's apps.
+Sample GraphQL queries can be found at <a href="https://github.com/fbchat-dev/fbchat/blob/master/fbchat/_graphql.py">_graphql.py</a></p>
+<p>I'm more familiar with Android so that was my platform of choice.
+My first try was Facebook Lite, but I had no success.
+Next up, Facebook for Android(aka com.facebook.katana).
+The version we are going to discuss is v230.0.0.36.117 , given that I revisited the schema in 2019.</p>
+<p>In this case <code>apktool d -r</code> gave me a decent start. The <code>-r</code> flag is needed due to a bug in apktool.
+It disables the extraction of resources, but it won't affect the discussion.</p>
+<p>Now, we can start looking for strings.
+We'll need a sufficiently uncommon string so that it doesn't match too many files, long ones are generally the best.
+So let's try <code>grep -R lightweight_event_creator</code>. And more sure than not, we get:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>grep: assets/graph_metadata.bin: binary file matches
+</span></code></pre>
+<p>Given the suggestively named file, we have found our schema!</p>
+<h1 id="magic-numbers"><a class="zola-anchor" href="#magic-numbers" aria-label="Anchor link for: magic-numbers">🔗</a>Magic numbers</h1>
+<p>I was expecting a few months of dex reverse engineering, but the task seems to be a different one.
+We now have to deduce the file-type. Let's try:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ file assets/graph_metadata.bin
+</span><span>assets/graph_metadata.bin: data
+</span></code></pre>
+<p>So it's a custom encoding, it might be ASN.1, a proprietary serialization, or anything else.
+This file must be read somewhere, so we might find a reference to it and hopefully to its format:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ grep -R graph_metadata.bin
+</span><span>original/META-INF/MANIFEST.MF:Name: assets/graph_metadata.bin
+</span><span>original/META-INF/FACEBOOK.SF:Name: assets/graph_metadata.bin
+</span></code></pre>
+<p>Nothing useful... the code could be obfuscated or downloaded from the internet.
+An Android installation might provide us with more information.
+Let's find out where it's used:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ adb root
+</span><span>$ adb shell
+</span><span>
+</span><span>generic_arm64:/ # setenforce 0
+</span><span>generic_arm64:/ # stop
+</span><span>generic_arm64:/ # start
+</span><span>generic_arm64:/ # strace -ff -i -s 500 -o /data/local/tmp/strace.zygote -p $(pidof zygote)
+</span><span>generic_arm64:/ # grep -R graph_metadata.bin /data/local/tmp/strace.zygote.*
+</span><span>strace.zygote.6690:[e893a7ac] pread64(31, &quot;assets/graph_metadata.bin&quot;, 25, 5584953) = 25
+</span></code></pre>
+<p>And in this case we got nothing, or maybe. But it's not an open, nor an openat.
+We have an offset let's check that with the apk:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ grep -abo assets/graph_metadata.bin katana.apk
+</span><span>5584953:assets/graph_metadata.bin
+</span><span>41145638:assets/graph_metadata.bin
+</span></code></pre>
+<p>So, it's there, we now have a hint to tell gdb what condition to break on:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ adb forward tcp:4444 tcp:4444
+</span><span>$ adb shell
+</span><span>generic_arm64:/ # am set-debug-app com.facebook.katana
+</span><span>generic_arm64:/ # setprop wrap.com.facebook.katana &#39;gdbserver localhost:4444&#39;
+</span></code></pre>
+<p>Now we'll open Facebook for Android and launch gdb:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ gdb
+</span><span>target remote :4444
+</span><span>break pread64
+</span><span>condition 1 $r4 == 5584953
+</span></code></pre>
+<p>And...</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>#0  0xf5b567a4 in pread64 () from target:/system/lib/libc.so                                                                              [36/1861]
+</span><span>#1  0xf6a768d8 in ?? () from target:/system/lib/libandroidfw.so
+</span><span>#2  0xf6a73190 in android::ZipFileRO::findEntryByName(char const*) const () from target:/system/lib/libandroidfw.so
+</span><span>#3  0xf6a65664 in android::AssetManager::openNonAssetInPathLocked(char const*, android::Asset::AccessMode, android::AssetManager::asset_path const&amp;
+</span><span>) () from target:/system/lib/libandroidfw.so
+</span><span>#4  0xf6a65bd6 in android::AssetManager::open(char const*, android::Asset::AccessMode) () from target:/system/lib/libandroidfw.so
+</span><span>#5  0xf753c79e in AAssetManager_open () from target:/system/lib/libandroid.so
+</span><span>#6  0xda7f928a in ?? () from target:/data/data/com.facebook.katana/lib-xzs/libcoldstart.so
+</span><span>#7  0xda7f91ec in ?? () from target:/data/data/com.facebook.katana/lib-xzs/libcoldstart.so
+</span><span>#8  0xda7f9160 in ?? () from target:/data/data/com.facebook.katana/lib-xzs/libcoldstart.so
+</span><span>#9  0xda815bf0 in ?? () from target:/data/data/com.facebook.katana/lib-xzs/libcoldstart.so
+</span><span>#10 0xda6efece in ?? () from target:/data/data/com.facebook.katana/lib-xzs/libcoldstart.so
+</span><span>#11 0xda6f2186 in ?? () from target:/data/data/com.facebook.katana/lib-xzs/libcoldstart.so
+</span><span>#12 0xda6f2012 in ?? () from target:/data/data/com.facebook.katana/lib-xzs/libcoldstart.so
+</span></code></pre>
+<p>Looks like it's somewhere in libcoldstart.so. Let's see if we can find its format.
+Maybe we can get some information by looking at the libraries it links to?</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ adb pull /data/data/com.facebook.katana/lib-xzs/libcoldstart.so
+</span><span>$ readelf -a libcoldstart.so | grep &#39;Shared library:&#39;
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libz.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libdl.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [liblowlevel.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libxplat_yoga_util_utilAndroid.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [liblog.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libandroid.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libxplat_third-party_jsoncpp_jsoncppAndroid.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libglog.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libfmt.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libflatbuffersflatc.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libsigmux.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libfbsystrace.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libmemalign16.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libbreakpad.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libprofiloextapi.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [liblinkerutilsmerged.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libdistractmerged.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libgnustl_shared.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libm.so]
+</span><span> 0x00000001 (NEEDED)                     Shared library: [libc.so]
+</span></code></pre>
+<p>Now we have a reference to FlatBuffers: &quot;libflatbuffersflatc.so&quot;, could this be the format?
+Let's check. An easy way to see if a file is formated using FlatBuffers is to check that the
+first 4 bytes interpreted as an int32_t point to a table, the first int32_t in a table is the
+negative offset to its virtual table. Let's see:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ hexdump -C graph_metadata.bin | head
+</span><span>00000000  20 00 00 00 00 00 00 00  00 00 16 00 28 00 04 00  | ...........(...|
+</span><span>00000010  08 00 0c 00 10 00 14 00  18 00 1c 00 20 00 24 00  |............ .$.|
+</span><span>00000020  16 00 00 00 e0 10 2f 00  10 27 25 00 04 3a 1f 00  |....../..&#39;%..:..|
+</span><span>00000030  20 fd 1d 00 ac 96 13 00  94 96 13 00 68 12 13 00  | ...........h...|
+</span><span>00000040  b4 0e 0b 00 04 00 00 00  64 52 00 00 a0 0e 0b 00  |........dR......|
+</span><span>00000050  90 0e 0b 00 84 0e 0b 00  78 0e 0b 00 68 0e 0b 00  |........x...h...|
+</span><span>00000060  4c 0e 0b 00 28 0e 0b 00  08 0e 0b 00 e4 0d 0b 00  |L...(...........|
+</span><span>00000070  c8 0d 0b 00 ac 0d 0b 00  94 0d 0b 00 84 0d 0b 00  |................|
+</span><span>00000080  68 0d 0b 00 58 0d 0b 00  40 0d 0b 00 24 0d 0b 00  |h...X...@...$...|
+</span><span>00000090  08 0d 0b 00 f0 0c 0b 00  d8 0c 0b 00 c0 0c 0b 00  |................|
+</span></code></pre>
+<p>Integers in FlatBuffers are little-endian. We get:
+The first offset is 0x20 , it points to a 0x16 which points to the (0x16, 0x28).
+Assuming that 0x16 is the length of the virtual table, the data immediately after it is
+our root table. It would seem that it passes this heuristic.</p>
+<h1 id="decoding"><a class="zola-anchor" href="#decoding" aria-label="Anchor link for: decoding">🔗</a>Decoding</h1>
+<p>To automatize the decoding process, I have written a python module:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>$ echo &#39;H4sIAAAAAAACA51UTY+bQAy98yt8qQY26TZK94TC3rZSLz31UCmKEAmmGZUM0TCgbVf57/UwDgwhiVbLJQQ/P9vPH/JwrLSB2uhmZ4IgyLGAHHdVjmlr0syEeWayOVRFUaOJ4gDoIUOJChL4jSat9+Q/RnUgsy3vomAGyyjooLKAkDlXsIig0hCe3e0HF9U+OpM1wsvrDo9GVioU31WblTKHVmrTZCWYbFuimPJ+omAfpSEKpVEZKkUqc2b8YtPnKD1iBV8/GoXctcSagrhePDbqmO3+hGIlSCqxF/DQx5mDVXLthIwHQV1qm2i9jDeOVaNptIK3PinhMCJm8HywsORk4jfPxtmRjd8606kfGI1F6tIYNXlOCbSoa0y+ZWWN3AKy8VhYPcejc5aU/Tw1XSVc62f70tmceOVt6KyDukRtzE51Gu4bk81eyb2ifuoGI1/fKxvTU0Ve7Em9sc9y2XgpbjX6iXq82HjEV7bwLvX+JvXykrrFnal0iuWFCFim5u8R56DO4jngsPTT7nqwbUbLkXgl9a1X8Jx4ZO9YKCahu+HcvANgUww51QhkbVd4YCRDLf/ZPBgSXBmnAWQR9Zr/jzfMr2pGJTyc3SaTV0gs8wstewkNS3d9SF1yqduf1qz7tdys1aYvmQEJLCYr8aNSOEq7l79z4lz3+JrmzeEYbptiGCMKKYRzLkhpJCWBAKMYMCMQvMWL5a+TeCTYgfYBo1FI+qE4nZRE6S6ToK7QbfHOlNso+saD5N0iqyoZntwJcgbRLcAdis4+JVnyHTsF/wFyfW7uCQcAAA==&#39; | base64 -d | gunzip &gt;fbs.py
+</span></code></pre>
+<p>Running:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>&gt;&gt;&gt; import fbs
+</span><span>&gt;&gt;&gt; data = open(&#39;graph_schema.bin&#39;, &#39;rb&#39;).read()
+</span><span>&gt;&gt;&gt; root = root = fbs.deref_offset(data, 00)
+</span><span>&gt;&gt;&gt; fbs.get_table_vt(data, root)
+</span><span>{&#39;vt_len&#39;: 22, &#39;tbl_len&#39;: 40, &#39;entries&#39;: (4, 8, 12, 16, 20, 24, 28, 32, 36)}
+</span></code></pre>
+<p>From here it's a lot of guess work, and trial and error.
+So far I've got the following schema, it's incomplete, but it provides us with enough
+information to reconstruct all types and fields of the GraphQL API:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>echo &#39;H4sIAAAAAAACA5WWzW6jMBDH7zzFPEClNtgGkhxy41pptbcoipxiGlQKFTjbRdW++9oeoG4C2LngyPnNf8bMh5H8VApIV/AVgFqO+WqzV0u6OmwB4PERZJ3VG/g8cwl53eyCf0HQyubyIsFggx2atue6kdtJu5EKlyilLjGiEJVDLXspKs0DzCmHWnavMRO2I26C0sSOeFaa2BEvUcSLol4U86IiB2UdmeKR6e2RiyoTf9UT0vUD5IUoM6j4u+jpcJZmPUFmichOJ8MAmAlANkX1Oiaq+xCjS3br8qMp3nnTwZvodj1CNnvDDDX67ZP2Z2h7kl6R8/UWY4DxRIC3Lz/2KorYRKqWlMz5R4p6aTHUYstakZdW7EUlkz2Fe1C0wMtP3rWwDwk9PEAhzV6lEvGHl0UGdZ63QqqdDLSJZZH0Dtbu1tYJebIwRfUi/NSKStopPA6trX9dlfqSB2xyzNQxDX1mSI9a7nBU2R4X3OHEcsA/3bHRF3OPWqQ8R22CyonXqE207KWs+/6Yp4gXRSc9qkqRZ/VoBC874KZ8Bgt2t0V0t0V8t4VqFbWkyUJzJnP1vqTrrP2hQrTzIY+YSiv3V3FgEif/H6vi1/Pzb6OHXwQHRxeZ/gmdlJ6HxEmpqZ1SJ6XnIXNSkX0DIHXirTDXTruzrz9Nx3oKODVNsp3UWnk2F8lh6YZu6loezR2o3/g2+A9/wCAZkQkAAA==&#39; | base64 -d | gunzip &gt;graph_metadata.fbs
+</span></code></pre>
+<h1 id="the-final-step"><a class="zola-anchor" href="#the-final-step" aria-label="Anchor link for: the-final-step">🔗</a>The final step</h1>
+<p>The schema as you've probably noticed has an extra layer of encoding, probably to reduce its size.
+We don't know what the types nor fields mean. The most helpful indicator is that if the type of a field
+is a short we can check if it's an index in a vector by checking that all values are less than the vector's
+length and the maximum index is close to the length of the vector.</p>
+<p>We'll skip over the manual decoding. I'll just show you the script I wrote to extract the types from the schema:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>echo &#39;H4sIAAAAAAACA5VUwW7CMAy95ysy7ZAiVWUUmLRJXHfcD1RR1NEUytqkSgJShfbvc+KWFhiH9RTe87Of7YTnp/nRmvlXpeZSnWjbub1WS0KqptXG0YPVajjbzhJCClnSrVYnaZwoK1kX0aGI6S4cZ++EwqfyRtINPRQZK98Yz5DM2MdKlAvGOQlRZQoxUyplHInlDbFkvaQqPVkpmr3EdMGxmv92rmsvJddQskw5aNehXoiS9ShexXQd09dH+jfU35ZcgOoPCcvOP5wlpTZN7qKAzlBqpDsaRc8XCfODYe9hPvGIegmgQYrwz82cPYNjDumvphygsdfBdABS5p2HiNF4a6omN534lt3Q8covacyT+h39HX6/+Qnf9y1r+7Dcp1ayX7/PYAHK+q1rg9jFMpqB5Y/JMGDiOgD8jr+3iffzOtAmedtKVUQ9+a+tTfoCcvJrEoNVgMbD9XKbvFJQWfXrhBMY1+DHgzFlxjH0ewgdw0NMap0XQYJW7XYvm/x6hHgtIdfwFO5v7INbdYnDtMNspjc6mCiOTRthTOz/ExLrCn10s2GtKtnW2soIAAIXUQg/OCHoBt6KEL5rIRi6CiPwKXKzO2ULPiO/Stbkt48EAAA=&#39; | base64 -d | gunzip &gt;schema.py
+</span></code></pre>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>flatc --json --strict-json --raw-binary graph_metadata.fbs -- graphql_schema.bin
+</span><span>./schema.py graphql_schema.json &gt;graphql_types.json
+</span></code></pre>
+<p>And, we're done.</p>
+<h1 id="disclosure"><a class="zola-anchor" href="#disclosure" aria-label="Anchor link for: disclosure">🔗</a>Disclosure</h1>
+<p>I have presented my findings to Facebook, their response was that the schema is not confidential.</p>
+
+</article>
+
+
+      
+      <footer role="contentinfo">
+        <hr />
+        
+        <nav style="margin-bottom:1rem;" role="navigation">
+          
+            <a href="https://cajum.github.io/about/me">About me</a>
+            
+          
+        </nav>
+        
+        
+        <small>Built with <a href="https://www.getzola.org/">Zola</a>.<br />
+          Maintained with &hearts; for the web.<br />
+          
+        </small>
+        
+      </footer>
+      
+
+    </main>
+    
+    
+  </body>
+</html>
+

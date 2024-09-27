@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://cajum.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://cajum.github.io/about/</loc>
+    </url>
+    <url>
+        <loc>https://cajum.github.io/about/me/</loc>
+        <lastmod>2023-11-16</lastmod>
+    </url>
+    <url>
+        <loc>https://cajum.github.io/csro/</loc>
+        <lastmod>2024-07-13</lastmod>
+    </url>
+    <url>
+        <loc>https://cajum.github.io/fbgraphql/</loc>
+        <lastmod>2020-12-30</lastmod>
+    </url>
+</urlset>
