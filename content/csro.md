@@ -3,13 +3,9 @@ date = 2024-07-13
 title = "Cum să îți amăgești audiența: Reportajul Recorder, \"Clanul Marelui Alb\""
 +++
 
-<<<<<<< Updated upstream
-În sfera credinței deseori apar neadevăruri. Fie ca acestea vin din partea guvernelor, a ereticilor sau a neștiutorilor. În acest articol vom încerca sa lămurim o tentativă de fraudă din partea unei agenții de presa ce se bucura de atenția unei populații semnificative din România. Anume, Recorder[^fn7].
-=======
-În sfera credinței deseori apar neadevăruri. Fie ca acestea vin din partea guvernelor, a ereticilor sau a neștiutorilor. În acest articol vom încerca sa lămurim o tentativă de fraudă din partea unei agenții de presă ce se bucură de atenția unei populații semnificative din România. Anume, Recorder[7].
->>>>>>> Stashed changes
+În sfera credinței deseori apar neadevăruri. Fie că acestea vin din partea guvernelor, a ereticilor sau a neștiutorilor. În acest articol vom încerca să lămurim o tentativă de fraudă din partea unei agenții de presă ce se bucură de atenția unei populații semnificative din România.
 
-În reportajul din 2021, reporterii Recorder pretind demascarea activităților de clan mafiot ale Bisericii Ortodoxe Române. Reportajul are ca scop analiza deturnării de fonduri ale Statului Român prin umflarea prețurilor aferente construcției sau renovării de lăcașuri de cult. Ca studiu de caz este abordată renovarea Mânăstirii Chiajna-Giulești. Ca dovadă a fraudei, este prezentat un document ce conține o parte din costurile renovării[1].
+În reportajul din 2021, reporterii Recorder[7] pretind demascarea activităților de clan mafiot ale Bisericii Ortodoxe Române. Reportajul are ca scop analiza deturnării de fonduri ale Statului Român prin umflarea prețurilor aferente construcției sau renovării de lăcașuri de cult. Ca studiu de caz este abordată renovarea Mânăstirii Chiajna-Giulești. Ca dovadă a fraudei, este prezentat un document ce conține o parte din costurile renovării[1].
 
 Reporterul ne atrage atenția asupra prețului unitar al manoperei aferente capitolului RPIC70E1, susținând că este de zece ori mai mare decât prețul pieței(25.56[1] vs 3.62[3]). Ca dovadă, ne arată o captură de ecran a programului eDevize[2]. Reporterul nu menționează direct numele programului, ci doar că este folosit de "majoritatea constructorilor din România"[6]. Pentru a confirma că programul este într-adevăr eDevize putem căuta o captura de ecran a programului[2]. După cum putem observa, butoanele de la "Cauta articol" la "Proprietăți" sunt identice, inclusiv lipsa diacriticelor. Din taburi lipsește "Fraht", dar asta nu este o problemă deoarece pot apărea schimbări în interfață între versiuni. Diferențele de aspect ale interfeței se datorează faptului că reporterul folosește versiunea macOS a programului.
 
