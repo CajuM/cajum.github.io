@@ -1,0 +1,25 @@
+# The URL the site will be built for
+base_url = "https://cajum.github.io"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+theme = "apollo"
+
+title = "My Personal Blog"
+
+[markdown]
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+socials = [
+  { name = "linkedin", url = "https://linkedin.com/in/mcaju", icon = "linkedin" },
+  { name = "github", url = "https://github.com/CajuM/", icon = "github" },
+]
+
+menu = []
